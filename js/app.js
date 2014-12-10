@@ -7,15 +7,22 @@ $(document).ready(function() {
     $('.ryu-ready').hide();
     $('.ryu-still').show();
   })
-  .mousedown(function() {
-  	// play hadouken sound
-  	$('.ryu-ready').hide();
-  	$('.ryu-throwing').show();
-  	$('.hadouken').show();
-    // show hadouken and animate it to the right of the screen
-  })
-  .mouseup(function() {
+	.mousedown(function() {
+   	// play hadouken sound
+   		$('.ryu-ready').hide();
+    	$('.ryu-throwing').show();
+    	$('.hadouken').show();
+    .animate(
+    	{'left': '300px'},
+    	500,
+    	function() {
+    		$(this).hide();
+    		$(this).css('left', '-212px');
+    	}
+      );	
+  	})
+	.mouseup(function() {
   	$('.ryu-throwing').hide();
   	$('.ryu-ready').show();
- });
+  });
 });
