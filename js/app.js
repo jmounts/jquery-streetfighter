@@ -31,6 +31,12 @@ $(document).ready(function() {
       $('.ryu-cool').show();
     }
   });
+  $('body').keyup(function(e){
+    if(e.keyCode == 88){
+      $('.ryu-cool').hide();
+      $('.ryu-ready').show();
+    }
+  });
 });
 
 function playHadouken () {
